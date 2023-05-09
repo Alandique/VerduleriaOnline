@@ -1,0 +1,224 @@
+//Imagen de Frozono en el fondo
+.imagenPortada {
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(#000033, transparent, transparent, #000033), url('../imagenes/veamos2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+//Caja blur para el diálogo
+.caja {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    width: 24%;
+    height: 35%;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.colorCaja {
+    background-color: #ffffff10;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+.arrowblue {
+    display: inline-block;
+    position: relative;
+    top: 11em;
+    left: 17em;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    z-index: 1;
+    //Transición para el hover
+    transition: all 0.5s ease;
+
+    //Animación para la opacidad
+    animation-name: opacidad;
+    animation-duration: 7.5s;
+}
+
+@keyframes opacidad {
+    from {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.arrowblue:hover {
+    transform: scale(1.5);
+}
+
+
+//Diálogo
+.animacion1 {
+    font-family: 'Carter One', cursive;
+    color: #001D3D;
+    font-size: 1.5rem;
+    position: relative;
+    left: -20em;
+    top: -0.25em;
+}
+
+.animacion2 {
+    font-family: 'Carter One', cursive;
+    color: #001D3D;
+    font-size: 1.5rem;
+    position: relative;
+    left: 30em;
+    top: 0.25em;
+}
+
+.animacion3 {
+    font-family: 'Carter One', cursive;
+    color: #001D3D;
+    font-size: 1.5rem;
+    position: relative;
+    left: -20em;
+    top: 0.75em;
+}
+
+.animacion4 {
+    font-family: 'Carter One', cursive;
+    font-size: 1.5rem;
+    color: #001D3D;
+    position: relative;
+    left: 27em;
+    top: 1.25em;
+}
+
+//Código para la opacidad y para el traslado que le doy desde Javascript
+.animacion1,
+.animacion2,
+.animacion3,
+.animacion4 {
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+}
+
+.animacion1.translate {
+    transform: translateX(24em);
+    opacity: 1;
+}
+
+.animacion2.translate {
+    transform: translateX(-22em);
+    opacity: 1;
+}
+
+.animacion3.translate {
+    transform: translateX(22em);
+    opacity: 1;
+}
+
+.animacion4.translate {
+    transform: translateX(-23em);
+    opacity: 1;
+}
+
+//BUSCADOR
+#buscadorContainer {
+    width: 100%;
+    background-color: #000033;
+    padding-top: 8em;
+    //Le resto el padding-top de las cards
+    padding-bottom: 4em;
+}
+
+.buscador {
+    margin-left: 5em;
+    margin-right: 5em;
+    background-color: #26428B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.buscadorLabel {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0;
+}
+
+.buscadorLabel span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12em;
+    padding: 0;
+    margin: 0;
+    background-color: #000033;
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #ffd60a;
+    height: 2.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.buscadorLupa {
+    margin-left: 0.25em;
+    height: 0.8em;
+    width: 0.8em;
+}
+
+//Tengo que eliminar los estilos por defecto de select e input, sino me causa problemas en el diseño
+//Tengo que poner el height con un valor definido sí o sí, sino no tienen las mismas alturas
+select,
+input {
+    margin: 0;
+    padding: 0;
+    border: 2px solid #000033;
+    background-color: white;
+    font-size: inherit;
+    font-family: inherit;
+    height: 2.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.buscadorLabel select {
+    width: 12em;
+    text-align: center;
+    background-color: #26428B;
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #ffd60a;
+}
+
+.buscadorLabel input {
+    width: 12em;
+    text-align: center;
+    background-color: #26428B;
+    overflow: hidden;
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #ffd60a;
+}

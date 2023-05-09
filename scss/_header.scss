@@ -1,0 +1,159 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.7s;
+    z-index: 2;
+    background-color: transparent;
+}
+
+//Clase creada desde Javascript, no aparece en el HTML
+header.abajo {
+    background: #141A32;
+}
+
+//Sigo con la clase ".abajo" creada desde Javascript pero esta vez le cambio el padding al titulo
+header.abajo .titulo {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+nav {
+    padding: 0em;
+    margin: 0em;
+    margin-left: 5em;
+    margin-right: 5em;
+    display: flex;
+    align-items: center;
+}
+
+/*Div titulo y png de usuario*/
+.titulo {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0em;
+    padding: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    transition: padding-top 0.5s ease-out, padding-bottom 0.5s ease-out;
+}
+
+.usuario {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1.5em;
+}
+
+/*Titulo*/
+.imagenDino {
+    position: absolute;
+    margin-top: 0.6em;
+    margin-left: -0.65em;
+    padding: 0;
+    max-width: auto;
+    height: 3.3em;
+}
+
+.primero {
+    display: inline;
+    text-align: left;
+    color: #ffd60a;
+    font-size: 3rem;
+    letter-spacing: 0.22em;
+    padding: 0;
+    margin: 0;
+}
+
+.segundo {
+    display: inline;
+    text-align: left;
+    color: #ffd60a;
+    font-size: 3rem;
+    letter-spacing: 0.22em;
+    padding: 0;
+    margin: 0;
+    margin-left: -0.1em;
+}
+
+.tercero {
+    display: inline;
+    text-align: left;
+    color: #ffd60a;
+    font-size: 3rem;
+    letter-spacing: 0.22em;
+    padding: 0;
+    margin: 0;
+    margin-left: 1em;
+}
+
+/*Pestañas*/
+.menu {
+    /*margin-left:auto hace que el .menu se expanda todo lo posible hacia la izquierda, empujando al elemento ".usuario" hacia la derecha.
+    /*nav ul*/
+    list-style: none;
+    margin: 0em;
+    padding: 0em;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.menuItem {
+    /*nav ul li*/
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    padding: 0em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+
+.menuLink {
+    /*nav ul li a*/
+    color: #ffd60a;
+    text-decoration: none;
+}
+
+.headerPng {
+    height: 0.8em;
+    width: 0.8em;
+}
+
+/*--Número para marcar la cantidad de disfraces que vas a comprar--*/
+/*--Si no compras nada, aparece el dibujo de un carrito--*/
+.carrito1 {
+    display: inline-block;
+    background-image: url("../imagenes/carritosuper.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.carrito2 {
+    display: none;
+    width: 1.2em;
+    height: 1.2em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-family: initial;
+    font-size: 1.1rem;
+    font-weight: 1000;
+}
+
+/*--Imagen de usuario--*/
+.imagenUsuario {
+    max-width: auto;
+    height: 2em;
+}

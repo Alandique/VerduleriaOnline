@@ -1,0 +1,98 @@
+/******************************************PRODUCTOS******************************************/
+//El font-weight de esta letra en modo normal creo que es 1000, en este título lo reduzco a 400 o normal
+.tituloProductos {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    color: #ffd60a;
+    background-color: #000033;
+    padding-top: 3em;
+    padding-bottom: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
+    margin: 0;
+}
+
+.seccionProductos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000033;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-right: 5em;
+    padding-left: 5em;
+}
+
+.divTituloVerMas {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    padding-left: 0em;
+    padding-right: 0em;
+    background-color: #000033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloVerMas {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    color: #ffd60a;
+    //Transición para el hover
+    transition: all 0.5s ease;
+}
+
+.tituloVerMas:hover {
+    transform: scale(1.25);
+}
+
+//FOOTER
+.footer {
+    padding-top: 6em;
+    padding-bottom: 6em;
+    padding-left: 0em;
+    padding-right: 0em;
+    background-color: #000033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContenido {
+    width: 100%;
+    height: 8em;
+    background-color: #26428B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerTitulo {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    color: #ffd60a;
+}
+
+.footerImagen {
+    height: 2.25em;
+    width: 2.25em;
+    margin-left: 1.5em;
+    //Transición para el hover
+    transition: all 0.5s ease;
+}
+
+.footerImagen:hover {
+    transform: scale(1.25);
+}
