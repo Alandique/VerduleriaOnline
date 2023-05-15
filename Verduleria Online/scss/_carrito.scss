@@ -1,0 +1,319 @@
+.carritoClass {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: -10;
+}
+
+.carritoClass:target {
+    opacity: 1;
+    z-index: 10;
+}
+
+//Clase ".hidden" agregada con Javascript para que no aparezca el fondo del modal cuando refresque la página
+//No entendí muy bien este problema, lo resolví con chat gpt
+.carritoClass.hidden {
+    display: none;
+}
+
+
+
+
+
+//Acá empieza el modal del carrito, lo anterior era sólo posición y fondo gris
+//Contenedor del carrito
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+}
+
+
+
+
+
+//Header del carrito
+.modalHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #000033;
+    color: #ffd60a;
+    margin: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.modalHeaderTitle {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.75rem;
+    color: #ffd60a;
+}
+
+.modalHeaderImagen {
+    margin-left: 0.4em;
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.modalHeaderButton {
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: auto;
+    //Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    //Transición para el hover
+    transition: all 0.5s ease;
+}
+
+.modalHeaderButton:hover {
+    transform: scale(1.5);
+}
+
+
+
+
+
+//Contenido del carrito
+.modalContent {
+    flex-grow: 1;
+    background-color: #26428B;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 2em;
+    padding-right: 1.4em;
+}
+
+.modalContent::-webkit-scrollbar {
+    background-color: #26428B;
+    width: 0.6em;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+    background-color: #ffd60a;
+    border-radius: 0.2em;
+}
+
+
+.modalProduct {
+    display: flex;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-bottom: 0.15em solid #ffd60a;
+}
+
+.modalProductImagen {
+    display: inline-block;
+    margin-right: 1em;
+    height: 10em;
+    width: 10em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modalProductImagen img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalProductNombre {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #ffd60a;
+}
+
+.modalProductPrecio {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #ffd60a;
+    font-weight: 1000;
+}
+
+.modalProductCantidad {
+    display: inline-block;
+    margin-left: auto;
+    background-color: #ffd60a;
+    max-height: 2em;
+    min-height: 2em;
+    max-width: 6em;
+    min-width: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.modalProductRestar {
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+    cursor: pointer;
+    //Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modalProductNumero {
+    display: inline-block;
+    color: black;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modalProductSumar {
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: black;
+    cursor: pointer;
+    //Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modalProductTotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    max-height: 2em;
+    min-height: 2em;
+    max-width: 9em;
+    min-width: 9em;
+}
+
+.modalProductTotalPalabra {
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #ffd60a;
+}
+
+.modalProductTotalNumero {
+    margin-left: 0.5em;
+    text-align: center;
+    font-weight: 1000;
+    font-size: 1.2em;
+    color: #ffd60a;
+}
+
+.modalProductBorrar {
+    display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
+    //Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    //Transición para el hover
+    transition: all 0.5s ease;
+}
+
+.modalProductBorrar:hover {
+    transform: scale(1.5);
+}
+
+/*
+Para que todo esté en posición relativa y el modalContent mida 100vh - modalHeader - modalFooter, tuve que poner:
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+}
+.modalContent {
+    flex-grow: 1;
+}
+.modalFooter {
+    margin-top: auto;
+}
+Así le voy a poder poner las medidas que quiera al modalHeader y modalFooter, y siempre el modalContent va a medir
+lo que sobre para llegar a 100vh de altura.
+*/
+
+
+
+
+
+//Footer del carrito
+.modalFooter {
+    display: flex;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #000033;
+}
+
+.modalFooterButton {
+    width: 30%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    //Sacarle los estilos que vienen por defecto en las etiquetas <button> con estas 3 propiedades:
+    background-color: #000033;
+    border: none;
+    box-shadow: none;
+}
+
+.modalFooterButtonPalabra {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #ffd60a;
+    cursor: pointer;
+    //Transición para el hover
+    transition: all 0.5s ease;
+}
+
+.modalFooterButtonPalabra:hover {
+    transform: scale(1.25);
+}
+
+.modalFooterTotal {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffd60a;
+    background-color: #000033;
+}
+
+.modalFooterTotalPalabra {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+
+.modalFooterTotalNumero {
+    margin-left: 0.5em;
+    font-weight: 1000;
+    font-size: 1.25rem;
+}

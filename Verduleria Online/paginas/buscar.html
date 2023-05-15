@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verduleria Online</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/imagenes/zanahoria.png">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!--JS-->
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script defer src="../js/buscar.js"></script>
+    <script defer src="../js/carrito.js"></script>
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+    <!--COMIENZO DEL HEADER-->
+    <header>
+        <nav>
+
+            <!--Tengo que dividir los h2 en 3 clases porque sino Google translate me los deforma-->
+            <div class="titulo">
+                <h2 class="primero">VERDU</h2>
+                <h2 class="segundo">LERIA</h2>
+                <img class="imagenDino" loading="lazy" src="../imagenes/zanahoria.png" alt="Imagen de dinosaurio para el título">
+                <h2 class="tercero">ONLINE</h2>
+            </div>
+
+            <ul class="menu">
+                <li class="menuItem">
+                    <a href="../index.html" style="text-decoration: none;">
+                        <div class="menuLink">
+                            Inicio
+                            <img class="headerPng" loading="lazy" src="../imagenes/casita2.png" alt="Imagen de inicio">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="menuItem">
+                    <a href="buscar.html" style="text-decoration: none;">
+                        <div class="menuLink">
+                            Buscar
+                            <img class="headerPng" loading="lazy" src="../imagenes/searcheando.png" alt="Imagen de lupa">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="menuItem">
+                    <a href="#carrito-id" style="text-decoration: none;">
+                        <div id="ver-carrito" class="menuLink">
+                            Shop
+                            <div class="carrito1"></div>
+                            <div class="carrito2"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="usuario">
+                <img class="imagenUsuario" loading="lazy" src="../imagenes/user-yellow.png" alt="Imagen de usuario">
+            </div>
+
+        </nav>
+    </header>
+    <!--FIN DEL HEADER-->
+
+
+
+
+
+    <!--COMIENZO DE LA IMAGEN DE PORTADA-->
+    <div class="imagenPortada">
+
+        <div class="caja colorCaja">
+            <a href="#buscadorContainer">
+                <img class="arrowblue" loading="lazy" src="../imagenes/down-arrow-blue.png" alt="Imagen de flecha apuntando abajo">
+            </a>
+
+            <h2 class="animacion1">Verduras...</h2>
+            <h2 class="animacion2">Frutas...</h2>
+            <h2 class="animacion3">y...</h2>
+            <h2 class="animacion4">algo mas!</h2>
+        </div>
+
+    </div>
+    <!--FIN DE LA IMAGEN DE PORTADA-->
+
+
+
+
+
+    <!--COMIENZO DEL BUSCADOR-->
+    <div id="buscadorContainer">
+
+        <div id="buscador" class="buscador">
+            <label for="categoria" class="buscadorLabel">
+                <span>Categoría</span>
+                <select id="categoria">
+                    <option value="Todo">Todo</option>
+                    <option value="Verdura">Verdura</option>
+                    <option value="Fruta">Fruta</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </label>
+
+            <label for="ordenar" class="buscadorLabel">
+                <span>Ordenar</span>
+                <select id="ordenar">
+                    <option value="Todo">Todo</option>
+                    <option value="A - Z">A - Z</option>
+                    <option value="Z - A">Z - A</option>
+                </select>
+            </label>
+
+            <label for="precio" class="buscadorLabel">
+                <span>Precio</span>
+                <select id="precio">
+                    <option value="Todo">Todo</option>
+                    <option value="Menor a mayor">Menor a mayor</option>
+                    <option value="Mayor a menor">Mayor a menor</option>
+                </select>
+            </label>
+
+            <label for="buscar" class="buscadorLabel">
+                <span>Buscar
+                    <img class="buscadorLupa" loading="lazy" src="../imagenes/searcheando.png" alt="Imagen de lupa">
+                </span>
+                <input type="text" id="buscar">
+            </label>
+        </div>
+
+    </div>
+    <!--FIN DEL BUSCADOR-->
+
+
+
+
+
+    <!--COMIENZO DE LISTA DE PRODUCTOS-->
+    <div id="seccion-productos" class="seccionProductos">
+        <!--Acá inserto las cards mediante Javascript-->
+    </div>
+    <!--FIN DE LISTA DE PRODUCTOS-->
+
+
+
+
+
+    <!--COMIENZO DEL FOOTER-->
+    <!--El css lo puse en index.scss-->
+    <div class="footer">
+        <div class="footerContenido">
+            <h2 class="footerTitulo">Alamanera 2023</h2>
+        </div>
+    </div>
+    <!--FIN DEL FOOTER-->
+
+
+
+
+
+    <!--COMIENZO DEL MODAL DEL CARRITO-->
+    <div id="carrito-id" class="carritoClass">
+        <!--Acá inserto el modal para el carrito-->
+    </div>
+    <!--FIN DEL MODAL DEL CARRITO-->
+
+
+
+
+
+</body>
+</html>

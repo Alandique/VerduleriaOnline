@@ -1,0 +1,104 @@
+/******************************************CARRUSEL******************************************/
+//El overflow hidden sirve para ocultar las diapositivas que no se ven en el momento, y así no ocupan espacio
+//Tuve que poner width: 100% porque con 100vw generaba un scroll horizontal
+#carrusel {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+//Aplico una capa de color al carrusel con esto
+#carrusel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#000033, transparent, transparent, #000033);
+    background-size: cover;
+    z-index: -1;
+}
+
+//Esto afecta sólo a la primera ul
+#carrusel>ul.imagenes {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+//Esto afecta a todas las li, de imágenes y de los indicadores
+#carrusel>ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+//Esto afecta sólo a las li de la primera ul
+#carrusel>ul.imagenes li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    z-index: -1;
+}
+
+//Esto afecta sólo a las imágenes que están dentro de la primera ul
+#carrusel>ul.imagenes li img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+//Mostramos el primer <li>
+#carrusel>ul.imagenes li:first-child {
+    opacity: 1;
+}
+
+//Mostramos el <li> del enlace que pulsemos
+#carrusel>ul.imagenes li:target {
+    opacity: 1;
+}
+
+//INDICADORES
+#carrusel>.indicadores {
+    list-style: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 90%;
+    left: 44%;
+    z-index: 2;
+}
+
+.indicador {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background-color: #ffd60a;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+//Cambio la forma del indicador de un punto a una línea
+.activo {
+    width: 5em;
+    height: 0.6em;
+    border-radius: 1em;
+}

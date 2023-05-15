@@ -1,0 +1,42 @@
+//Reseteo de CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62, 5%;
+}
+
+//Con esto personalizo el scrollbar
+body::-webkit-scrollbar {
+    background-color: #000814;
+    width: 0.6em;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ffd60a;
+    border-radius: 0.2em;
+}
+
+//Si quiero usar una fuente descargada utilizo @font-face, si quiero usar una fuente de google-fonts simplemente pego el link en el html y utilizo html {} en el scss
+/*
+@font-face {
+    font-family: 'Renogare';
+    src: url("../Renogare.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+*/
+
+/*
+html {
+    font-family: 'Carter One', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+*/
+
+//Medida promedio de font-size utilizada en esta página es 1.25rem
