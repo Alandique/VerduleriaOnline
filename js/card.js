@@ -70,4 +70,4 @@ verduras.forEach((verdura) => {
 
 
 //Este archivo js solamente lo voy a usar para el index.html
-//Para el buscar.html voy a agregarle las cards de los disfraces mediante fetch y data.json
+//Para el buscar.html voy a agregarle las cards de las verduras mediante fetch y data.json
