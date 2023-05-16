@@ -42,54 +42,52 @@ buscarInput.addEventListener('input', filtrarverduras);
 // ...
 
 async function filtrarverduras() {
-    const categoria = categoriaSelect.value;
-    const orden = ordenarSelect.value;
-    const precio = precioSelect.value;
-    const buscar = buscarInput.value.toLowerCase();
-    
-    try {
-      const resp = await fetch(url);
-      const data = await resp.json();
+  const categoria = categoriaSelect.value;
+  const orden = ordenarSelect.value;
+  const precio = precioSelect.value;
+  const buscar = buscarInput.value.toLowerCase();
   
-      let listaOriginal = data.verduras.slice(0); // Crear una copia de la lista original
-  
-      let listaFiltrada;
-      if (precio === "Todos") {
-        listaFiltrada = listaOriginal;
-      } else if (precio === "Menor a mayor") {
-        listaFiltrada = listaOriginal.sort((a, b) => a.precio - b.precio);
-      } else if (precio === "Mayor a menor") {
-        listaFiltrada = listaOriginal.sort((a, b) => b.precio - a.precio);
-      }
-  
-      // Filtrar por categoría
-      const resultados = listaFiltrada.filter((verdura) => {
-        if (categoria !== "Todo" && verdura.categoria !== categoria) {
-          return false;
-        }
-  
-        // Filtrar por búsqueda
-        if (buscar !== "" && !verdura.nombre.toLowerCase().includes(buscar)) {
-          return false;
-        }
-  
-        return true;
-      });
-  
-      // Ordenar resultados
-      if (orden === "A - Z") {
-        resultados.sort((a, b) => a.nombre.localeCompare(b.nombre));
-      } else if (orden === "Z - A") {
-        resultados.sort((a, b) => b.nombre.localeCompare(a.nombre));
-      }
-  
-      mostrarResultados(resultados);
-    } catch (error) {
-      console.error("Error al obtener los datos JSON:", error);
+  try {
+    const resp = await fetch(url);
+    const data = await resp.json();
+
+    let listaOriginal = data.verduras.slice(0); // Crear una copia de la lista original
+
+    let listaFiltrada = listaOriginal; // Asignar el valor por defecto a listaFiltrada
+
+    if (precio === "Menor a mayor") {
+      listaFiltrada = listaOriginal.sort((a, b) => a.precio - b.precio);
+    } else if (precio === "Mayor a menor") {
+      listaFiltrada = listaOriginal.sort((a, b) => b.precio - a.precio);
     }
+
+    // Filtrar por categoría
+    const resultados = listaFiltrada.filter((verdura) => {
+      if (categoria !== "Todo" && verdura.categoria !== categoria) {
+        return false;
+      }
+
+      // Filtrar por búsqueda
+      if (buscar !== "" && !verdura.nombre.toLowerCase().includes(buscar)) {
+        return false;
+      }
+
+      return true;
+    });
+
+    // Ordenar resultados
+    if (orden === "A - Z") {
+      resultados.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    } else if (orden === "Z - A") {
+      resultados.sort((a, b) => b.nombre.localeCompare(a.nombre));
+    }
+
+    mostrarResultados(resultados);
+  } catch (error) {
+    console.error("Error al obtener los datos JSON:", error);
   }
-  
-  // ...
+}
+
   
 
 //Función para mostrar los resultados en el HTML

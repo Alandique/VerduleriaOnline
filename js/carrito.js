@@ -205,25 +205,25 @@ const pintarCarrito = () => {
 //Con esto le estoy avisando qué es lo que debe subir al carrito
 //Esto me va a servir para llamar a esta función más abajo
 //Uso esta función en el botón comprar de cada card
-function agregarAlCarrito(disfraz) {
+function agregarAlCarrito(Verduras) {
     //"some" sirve para ver si el usuario compra 2 o más veces el mismo producto
     //Es un valor booleando. Devuelve false para comprar 1 sola vez, true para más veces
-    const repetir = carrito.some((repetirProducto) => repetirProducto.id === disfraz.id);
+    const repetir = carrito.some((repetirProducto) => repetirProducto.id === Verduras.id);
 
     //Si el producto se repite, se suma 1 en cantidad. Sino se pushea el producto entero
     if (repetir === true) {
-        carrito.map((disfrazEnCarrito) => {
-            if (disfrazEnCarrito.id === disfraz.id) {
-                disfrazEnCarrito.cantidad++;
+        carrito.map((VerdurasEnCarrito) => {
+            if (VerdurasEnCarrito.id === Verduras.id) {
+                VerdurasEnCarrito.cantidad++;
             }
         })
     } else {
         carrito.push({
-            id: disfraz.id,
-            nombre: disfraz.nombre,
-            categoria: disfraz.categoria,
-            precio: disfraz.precio,
-            imagen: disfraz.imagen,
+            id: Verduras.id,
+            nombre: Verduras.nombre,
+            categoria: Verduras.categoria,
+            precio: Verduras.precio,
+            imagen: Verduras.imagen,
             cantidad: 1,
         });
     };
