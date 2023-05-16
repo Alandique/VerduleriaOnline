@@ -158,7 +158,7 @@ resultados.forEach(verdura => {
 });
 }
 
-const url = '../js/data.json';
+const url = '../json/data.json';
 let verduras = [];
 
 async function obtenerDatosJson() {
